@@ -22,8 +22,6 @@ while sum(comphand) < 16:
 
 hand = [c1, c2]
 
-count = 2
-
 
 print("Your cards are ", c1, " and ", c2)
 
