@@ -33,7 +33,7 @@ while sum(hand) < 22:
   print("Your cards are", *hand)
 
 
-else:
+ else:
     if sum(hand) > sum(comphand):
      print("You win!")
 
