@@ -1,33 +1,40 @@
+
 import random
-
-deck = ["ace", 2, 3, 4, 5, 6, 7, 8, 9, 10, "jack", "queen", "king"]
-
-for card in deck:
-    if card == "ace": card == 1
-    if card == "jack": card == 10
-    if card == "queen": card == 10
-    if card == "king": card == 10
-
-c1 = random.choice(deck)
-c2 = random.choice(deck)
+from itertools import product
 
 
-comp1 = random.choice(deck)
-comp2 = random.choice(deck)
 
-comphand = [comp1, comp2]
+class Deck(object):
+ def __init__(self, ranks=None, suits=None):
+        if ranks is None:
+            ranks = range(2, 15)
+        if suits is None:
+            suits = ['Clubs', 'Diamonds', 'Hearts', 'Spades']
+        self.deck = []
+        for r in ranks:
+            for s in suits:
+                self.deck.append(r, s)
+
+def deal(self, n):
+        return random.sample(self.deck, n)
+
+
+hand = []
+comphand = []
+
+hand.append(deck.deal(2))
+comphand.append(deck.deal(2))
 
 while sum(comphand) < 16:
- comphand.append(random.choice(deck))
-
-hand = [c1, c2]
+ comphand.append(deck.deal(1))
 
 
-print("Your cards are ", c1, " and ", c2)
+
+print("Your cards are " *hand)
 
 while sum(hand) < 22:
  if input("Would you like to draw a card?") == "yes":
-  hand.append(random.choice(deck))
+  hand.append(deck.deal(1))
   print("Your cards are", *hand)
 
 
